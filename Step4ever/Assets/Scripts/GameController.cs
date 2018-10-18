@@ -23,7 +23,10 @@ public class GameController : MonoBehaviour {
 
     // These variables hold the player's current high score, and the score of the newly finished game
     // as strings. These are used in the information section of the Game Over Screen.
+    //+++++++ NOTE: THESE MAY NEED TO HAVE REFERENCES REATTACHED TO DO THIS COMMENT OUT THE HIDE IN INPSECTOR!!!! +++++
+    [HideInInspector]
     public Text highScoreText;
+    [HideInInspector]
     public Text gameScoreText;
 
     // This object is used to display the New_Tag in the Game Over screen.
@@ -91,11 +94,16 @@ public class GameController : MonoBehaviour {
 
     /* -> FUNCTIONS <- */
 
-        // public void GameOver()
-            // This function is called whenever the conditions for a game over are met. It
-            // sets isGameOver to true.
+    // public void GameOver()
+    // This function is called whenever the conditions for a game over are met. It
+    // sets isGameOver to true.
 
 
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*--------------------------------- AUDIO CLIP REFERENCES --------------------------------------------------------------*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+    
 
 /*======================================================================================================================*/
 /*======================================================================================================================*/
@@ -135,19 +143,22 @@ public class GameController : MonoBehaviour {
         GameObject currentChild;
 
         // This is responsible for the game continuously scrolling
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            // Instantiate the currentChild (the current obstacle)
-            // and make it scroll toward the player
-            currentChild = transform.GetChild(i).gameObject;
-            scrollObstacle(currentChild);
-
-            // Destroy the obstacle once it has left the screen
-            if (currentChild.transform.position.x <= -20.0f)
+        //if (Time.time > 3)
+        //{
+            for (int i = 0; i < transform.childCount; i++)
             {
-                Destroy(currentChild);
+                // Instantiate the currentChild (the current obstacle)
+                // and make it scroll toward the player
+                currentChild = transform.GetChild(i).gameObject;
+                scrollObstacle(currentChild);
+
+                // Destroy the obstacle once it has left the screen
+                if (currentChild.transform.position.x <= -20.0f)
+                {
+                    Destroy(currentChild);
+                }
             }
-        }
+        //}
     }
 
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -185,8 +196,6 @@ public class GameController : MonoBehaviour {
         // Disable the on-screen power counter
         PowerText.gameObject.SetActive(false);
 
-        // Disable the on-screen power counter
-        //PowerText.gameObject.SetActive(false);
 
         // If the player has hit a new high score
         if (score > PlayerPrefs.GetInt("High_Score", 0))
