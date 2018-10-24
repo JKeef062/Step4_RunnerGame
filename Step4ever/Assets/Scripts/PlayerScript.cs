@@ -41,6 +41,11 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        if (isGameOver)
+        {
+            return;
+        }
+
 		if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0)) && onGround && !isGameOver)
         {
             Player.AddForce(Vector3.up * (jumpPower * Player.mass * Player.gravityScale * 10.0f ));
@@ -50,6 +55,7 @@ public class PlayerScript : MonoBehaviour {
         // then the game is terminated.
         if (Player.position.x < xPos)
         {
+            //Debug.Log("If Statement still active");
             GameOver();
         }
 	}

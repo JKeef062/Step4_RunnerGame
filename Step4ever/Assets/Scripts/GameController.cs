@@ -66,18 +66,18 @@ public class GameController : MonoBehaviour {
 
 
     // This variable controlls how many obstacles that the game generates per second
-    public float obsFreq = 0.0f;
+    public float obsFreq;
 
     // Cunter variable that is used to determine how much time has passed
     // This is used to determine when a new obstacle should be generated
-    public float counter = 0.5f;
+    public float counter;
 
     // This determines the posititon where the obstacles will spawn
     public Transform obstacleSpawnPos;
 
     /* -> FUNCTIONS <- */
 
-        // void scrollObstacle(GameObject currentObstacle)
+        // void scrollObstacle(GameObject currentObstacle, float speed)
             // This allows the current obstacle to scroll towards the player from the right side of 
             // the screen to the left side of the screen
 
@@ -90,7 +90,7 @@ public class GameController : MonoBehaviour {
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
     // This bool is set to true whenever the condidtons for a game over are met
-    bool isGameOver = false;
+    public bool isGameOver = false;
 
     /* -> FUNCTIONS <- */
 
@@ -143,31 +143,28 @@ public class GameController : MonoBehaviour {
         GameObject currentChild;
 
         // This is responsible for the game continuously scrolling
-        //if (Time.time > 3)
-        //{
             for (int i = 0; i < transform.childCount; i++)
             {
                 // Instantiate the currentChild (the current obstacle)
                 // and make it scroll toward the player
                 currentChild = transform.GetChild(i).gameObject;
-                scrollObstacle(currentChild);
+                scrollObstacle(currentChild, scrollSpeed);
 
                 // Destroy the obstacle once it has left the screen
-                if (currentChild.transform.position.x <= -20.0f)
+                if (currentChild.transform.position.x <= -200.0f)
                 {
                     Destroy(currentChild);
                 }
             }
-        //}
     }
 
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /*+--------------------------------------------- FUNCTION DEFINITIONS ------------------------------------------------+*/
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-    void scrollObstacle(GameObject currentObstacle)
+    public void scrollObstacle(GameObject currentObstacle, float speed)
     {
-        currentObstacle.transform.position -= Vector3.right * (scrollSpeed * Time.deltaTime);
+        currentObstacle.transform.position -= Vector3.right * (speed * Time.deltaTime);
     }
 
     
@@ -177,7 +174,7 @@ public class GameController : MonoBehaviour {
         newObs.transform.parent = transform;
 
         // NOTE: Changing this value will chang the frequncy of challenge/obstacle generation.
-        counter = 1.5f;
+        counter = 5.0f;
     }
 
     
@@ -219,6 +216,7 @@ public class GameController : MonoBehaviour {
 
     public void Restart ()
     {
+        isGameOver = false;
         Application.LoadLevel(Application.loadedLevelName);
     }
 
