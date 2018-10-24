@@ -55,9 +55,11 @@ public class PlayerScript : MonoBehaviour {
         // then the game is terminated.
         if (Player.position.x < xPos)
         {
-            //Debug.Log("If Statement still active");
+            // Debug.Log("Player hit something game over");
             GameOver();
         }
+
+        // SAI YOUR CODE GOES HERE!!!!
 	}
 
     // This function is used to set isGame over to true whenever conditions for a game over are met.
