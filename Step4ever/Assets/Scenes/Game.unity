@@ -2342,7 +2342,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 891680068}
   scrollSpeed: 5
   Obstacles:
-  - {fileID: 1935692234658992, guid: 1cae7935a070265479a4eca70dd331e4, type: 2}
+  - {fileID: 1170812056421952, guid: e4b76622f3a544669b88e1c1cf177d18, type: 2}
   obsFreq: 0.5
   counter: 0
   obstacleSpawnPos: {fileID: 1134253614}
