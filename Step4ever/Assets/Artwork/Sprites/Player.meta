@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Step4ever/Assets/Artwork/Backgrounds.meta
+guid: d1cb5fac2bad0424389166b7d6831c51
+=======
 guid: cfb7870dc84e3844380d8ef9ad401f91
+>>>>>>> 10df7e317948257ba44688167990c7f7c8960d53:Step4ever/Assets/Artwork/Sprites/Player.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
