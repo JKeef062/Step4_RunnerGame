@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{CA6D3FC5-A036-3A1F-75E3-E73FA6CF12A1}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/powerupbar.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameController.cs">
     <Files>
       <File FileName="Assets/Scripts/FollowPlayer.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/GameController.cs" Line="75" Column="67" />
@@ -10,7 +10,7 @@
       <File FileName="Assets/Scripts/constSpawnFloor.cs" Line="8" Column="1" />
       <File FileName="Assets/Scripts/constSpawnCastle.cs" Line="22" Column="39" />
       <File FileName="Assets/Scenes/Game.unity" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/powerupbar.cs" Line="29" Column="41" />
+      <File FileName="Assets/Scripts/powerupbar.cs" Line="23" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
