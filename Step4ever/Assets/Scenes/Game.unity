@@ -182,7 +182,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Play Again
-
 '
 --- !u!222 &39003591
 CanvasRenderer:
